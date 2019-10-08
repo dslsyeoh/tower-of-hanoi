@@ -11,7 +11,8 @@ public class TowerOfHanoi
     public static void main(String[] args)
     {
         Command command = new CommandController();
-        List<ArrayDeque<Integer>> pegs = command.start(3);
+        command.start(3);
+        List<ArrayDeque<Integer>> pegs = command.getPegs();
         System.out.println("Start:");
         pegs.forEach(peg -> System.out.print(peg + " "));
         command.move(pegs.get(0), pegs.get(2));
@@ -33,17 +34,17 @@ public class TowerOfHanoi
         command.move(pegs.get(1), pegs.get(2));
         pegs.forEach(peg -> System.out.print(peg + " "));
         command.move(pegs.get(0), pegs.get(2));
-        System.out.println("\nDone: ");
+        System.out.println("\nProcessing: ");
         pegs.forEach(peg -> System.out.print(peg + " "));
-
-        // [3, 2, 1] [] []
-        // [3, 2] [] [1]
-        // [3] [2] [1]
-        // [3] [2,1] []
-        // [] [2, 1] [3]
-        // [1] [2] [3]
-        // [1] [] [3, 2]
-        // [] [] [3, 2, 1]
-
+        System.out.println("\nResult: " + command.getResult());
     }
+
+    // [3, 2, 1] [] []
+    // [3, 2] [] [1]
+    // [3] [2] [1]
+    // [3] [2,1] []
+    // [] [2, 1] [3]
+    // [1] [2] [3]
+    // [1] [] [3, 2]
+    // [] [] [3, 2, 1]
 }
