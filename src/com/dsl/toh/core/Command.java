@@ -1,3 +1,8 @@
+/*
+ * Author Steven Yeoh
+ * Copyright (c) 2019. All rights reserved.
+ */
+
 package com.dsl.toh.core;
 
 import java.util.ArrayDeque;
